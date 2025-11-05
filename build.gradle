@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.bikestore'
+version = '1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.rabbitmq:amqp-client:5.21.0'   // Cliente oficial AMQP
+    implementation 'com.google.code.gson:gson:2.10.1'  // JSON fácil
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+
+}
